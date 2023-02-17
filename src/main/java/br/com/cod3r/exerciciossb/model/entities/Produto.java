@@ -17,6 +17,20 @@ public class Produto {
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+	public Produto(int id, String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
+	
+	
+	public Produto(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+
 	public int getId() {
 		return id;
 	}
