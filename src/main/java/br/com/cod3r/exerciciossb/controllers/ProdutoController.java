@@ -38,8 +38,10 @@ public class ProdutoController {
 	
 	@GetMapping(path = "/pagina/{numeroPagina}")
 	public Iterable<Produto> obterProdutosPorPagina(
-			@PathVariable int numeroPagina){
-		Pageable page = PageRequest.of(numeroPagina, 3);
+			@PathVariable int numeroPagina, 
+			@PathVariable int qntElementos){
+		if(qntElementos >= 6) qntElementos = 6;
+		Pageable page = PageRequest.of(numeroPagina, qntElementos);
 		return produtoRepository.findAll(page);
 	}
 	
